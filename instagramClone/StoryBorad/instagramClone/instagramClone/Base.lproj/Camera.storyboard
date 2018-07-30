@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Camera-->
+        <scene sceneID="mbi-4b-hng">
+            <objects>
+                <viewController id="hjs-zd-PTB" customClass="CameraViewController" customModule="instagramClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yot-WE-1XN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RlS-10-UNW">
+                                <rect key="frame" x="0.0" y="64" width="375" height="100"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photos" translatesAutoresizingMaskIntoConstraints="NO" id="kF1-GJ-t14">
+                                        <rect key="frame" x="8" y="10" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="1NX-Oq-Pq6"/>
+                                            <constraint firstAttribute="width" constant="80" id="zf5-n0-YK4"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jDM-UT-H5J">
+                                        <rect key="frame" x="96" y="10" width="271" height="80"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="jDM-UT-H5J" firstAttribute="leading" secondItem="kF1-GJ-t14" secondAttribute="trailing" constant="8" id="CJ0-IB-b7j"/>
+                                    <constraint firstItem="kF1-GJ-t14" firstAttribute="leading" secondItem="RlS-10-UNW" secondAttribute="leading" constant="8" id="K7H-wR-abr"/>
+                                    <constraint firstItem="jDM-UT-H5J" firstAttribute="top" secondItem="RlS-10-UNW" secondAttribute="top" constant="10" id="KP6-DW-ZTz"/>
+                                    <constraint firstItem="kF1-GJ-t14" firstAttribute="top" secondItem="RlS-10-UNW" secondAttribute="top" constant="10" id="NMl-71-Jn8"/>
+                                    <constraint firstAttribute="trailing" secondItem="jDM-UT-H5J" secondAttribute="trailing" constant="8" id="Upo-17-jPA"/>
+                                    <constraint firstAttribute="bottom" secondItem="jDM-UT-H5J" secondAttribute="bottom" constant="10" id="kEr-3u-PPH"/>
+                                    <constraint firstAttribute="height" constant="100" id="wg5-sF-jhH"/>
+                                    <constraint firstAttribute="bottom" secondItem="kF1-GJ-t14" secondAttribute="bottom" constant="10" id="xIc-6y-63n"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ts4-Xf-BQp">
+                                <rect key="frame" x="8" y="609" width="359" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="sf7-9y-c1F"/>
+                                </constraints>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareButton_click:" destination="hjs-zd-PTB" eventType="touchUpInside" id="ykU-Td-WQ7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RlS-10-UNW" firstAttribute="top" secondItem="Sli-Pc-J2k" secondAttribute="top" id="3qW-I6-ChJ"/>
+                            <constraint firstItem="Sli-Pc-J2k" firstAttribute="trailing" secondItem="ts4-Xf-BQp" secondAttribute="trailing" constant="8" id="GNv-mw-Xda"/>
+                            <constraint firstItem="RlS-10-UNW" firstAttribute="leading" secondItem="Sli-Pc-J2k" secondAttribute="leading" id="Ss0-Be-Ads"/>
+                            <constraint firstItem="Sli-Pc-J2k" firstAttribute="bottom" secondItem="ts4-Xf-BQp" secondAttribute="bottom" constant="8" id="XsL-5W-BhQ"/>
+                            <constraint firstItem="ts4-Xf-BQp" firstAttribute="leading" secondItem="Sli-Pc-J2k" secondAttribute="leading" constant="8" id="Yf0-5c-UPH"/>
+                            <constraint firstItem="RlS-10-UNW" firstAttribute="trailing" secondItem="Sli-Pc-J2k" secondAttribute="trailing" id="giD-YT-lSx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Sli-Pc-J2k"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Camera" id="WPO-3T-2o9">
+                        <barButtonItem key="leftBarButtonItem" title="Remove" id="nx4-7U-MW1">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="remove_click:" destination="hjs-zd-PTB" id="AZX-2K-cIT"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="HJb-uu-nX4">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="cameraButton_click:" destination="hjs-zd-PTB" id="96J-YI-Qi0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="captionTextView" destination="jDM-UT-H5J" id="dpR-2r-jZw"/>
+                        <outlet property="photo" destination="kF1-GJ-t14" id="gKi-eb-fUP"/>
+                        <outlet property="remove" destination="nx4-7U-MW1" id="KO1-3g-udO"/>
+                        <outlet property="shareButton" destination="ts4-Xf-BQp" id="0S0-UC-O1v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bta-Wc-cV2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2152.8000000000002" y="471.8140929535233"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lYD-hT-7a0">
+            <objects>
+                <navigationController storyboardIdentifier="NavigationCamera" automaticallyAdjustsScrollViewInsets="NO" id="DTk-HH-Eov" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="user-3" id="lZJ-WZ-Bxn">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ktx-8t-KmZ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hjs-zd-PTB" kind="relationship" relationship="rootViewController" id="YR7-XD-X5X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XZj-nq-3SQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2073" y="-281"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="photos" width="64" height="64"/>
+        <image name="user-3" width="16" height="16"/>
+    </resources>
+</document>
