@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseStorage
 import FirebaseDatabase
+import FirebaseAuth
 import ImagePicker
 class CameraViewController: UIViewController,ImagePickerDelegate {
     @IBOutlet weak var photo: UIImageView!
@@ -16,11 +17,15 @@ class CameraViewController: UIViewController,ImagePickerDelegate {
     @IBOutlet weak var shareButton: UIButton!
     var selectedImage: UIImage?
     @IBOutlet weak var remove: UIBarButtonItem!
+    var username = ""
+    var photourl = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.selectPhoto))
         photo.addGestureRecognizer(tapGesture)
         photo.isUserInteractionEnabled = true
+        loadProfileData()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -105,13 +110,35 @@ class CameraViewController: UIViewController,ImagePickerDelegate {
             ProgressHUD.showError("İmage can't be empty")
         }
     }
+    func loadProfileData()
+    {
+        if let userID = Auth.auth().currentUser?.uid
+        {
+          
+            Database.database().reference().child("users").child(userID).observe(.value) { (snapshot) in
+                let values = snapshot.value as! NSDictionary
+                
+                if let profilePhoto = values["profileImageUrl"] as? String
+                {
+                    self.photourl = profilePhoto
+                }
+                
+                
+                self.username = (values["fullname"] as? String)!
+                
+                
+                
+            }
+        }
+    }
     func sendDataToDatabase(photoUrl: String)
     {
+        
         let ref = Database.database().reference()
         let postReference = ref.child("posts")
         let newPostId = postReference.childByAutoId().key
         let newPostReference = postReference.child(newPostId)
-        newPostReference.setValue(["photoUrl":photoUrl, "caption": captionTextView.text!]) { (error, ref) in
+        newPostReference.setValue(["photoUrl":photoUrl,"fullname": username,"photoUrl2":photourl, "caption": captionTextView.text!]) { (error, ref) in
             if error != nil
             {
                 ProgressHUD.showError(error!.localizedDescription)

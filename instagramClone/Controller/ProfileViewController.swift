@@ -61,7 +61,7 @@ class ProfileViewController: UIViewController{
             {
                 let captionText = dict["caption"] as! String
                 let photoUrlString = dict["photoUrl"] as! String
-                let post = Post(captionText: captionText, photoUrlString: photoUrlString)
+                let post = Post(captionText: captionText, photoUrlString: photoUrlString, profilPhotoUrl: "", fullName: "")
                 self.posts.append(post)
                 self.collectionView.reloadData()
                 self.postLabel.text="\(self.posts.count)"

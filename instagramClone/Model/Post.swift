@@ -11,9 +11,13 @@ class Post {
     
     var caption: String
     var photoUrl: String
+    var profilPhoto: String
+    var fullname: String
     
-    init(captionText: String, photoUrlString: String) {
+    init(captionText: String, photoUrlString: String, profilPhotoUrl:String, fullName: String) {
         caption = captionText
         photoUrl = photoUrlString
+        profilPhoto = photoUrlString
+        fullname = fullName
     }
 }

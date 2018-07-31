@@ -181,7 +181,7 @@
                                             <constraint firstItem="lKK-Z1-xhx" firstAttribute="leading" secondItem="ld6-B9-Qhs" secondAttribute="leading" id="r9t-Z9-xMb"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="postResim" destination="lKK-Z1-xhx" id="AaW-fR-dEy"/>
+                                            <outlet property="postResim" destination="lKK-Z1-xhx" id="5oZ-8c-dNo"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
